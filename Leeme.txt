@@ -1,0 +1,39 @@
+Pasos para instalar.
+- abrimos el archivo de config.php ubicado en C:\xampp\htdocs\pos\application\config en la linea 19 colocar el url
+correcto. ejemplo http://localhost/pos/
+
+- Abrimos el archivo de database.php ubicado en C:\xampp\htdocs\pos\application\config agregar la conexion de la base de 
+datos correctamente.
+ http://localhost/pos/login
+ dominio/carpeta/login
+Asi uno se logea como administrador o vendedor para cargar o subir imagenes de productos.
+
+Para que el sistema pueda enviar el mail configurar lo siguiente.
+crear una cuenta de gmail.
+una vez creado logearse a esa cuenta. 
+ entran en gmail inician sesión y después abren la siguiente liga: 
+https://www.google.com/settings/security/lesssecureapps
+y le activan la opción de Habilitar o Activar, por default esta deshabilitado, esa opción permite el envió de correos.
+
+una vez realizado eso abrir el archivo de ecomerce.php ubicado en  C:\xampp\htdocs\pos\application\controllers
+en la linea 176 colocar el correo y contraseña creado. 
+$configGmail = array(
+					'protocol'  => 'smtp',
+					'smtp_host' => 'ssl://smtp.gmail.com',
+					'smtp_port' => 465,
+					'smtp_user' => 'miemail@gmail.com',
+					'smtp_pass' => 'mipassword',
+					'mailtype'  => 'html',
+					'charset'   => 'utf-8',
+					'newline'   => "\r\n"
+				);   
+en la linea 187 colocar email de quien lo envia 
+$this->email->from('miemail@gmail.com','Sistema Ecomerce');
+
+
+
+ Usuario: info@desarrollosphp.com
+Password: 1234
+
+
+Nota: Coloco la Plantilla que ocupe para que modifiquen a su gusto.
